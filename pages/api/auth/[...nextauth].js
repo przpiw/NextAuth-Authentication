@@ -6,7 +6,7 @@ export default NextAuth({
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
-        // credentials will to passed from our login form
+        // credentials will be to passed from our login form
         // Your own logic here either check agains database or api endpoint
         // e.g. verify password if valid return user object.
         const user = {
@@ -37,7 +37,7 @@ export default NextAuth({
   },
   secret: 'SECRET_HERE',
   session: {
-    jwt: true,
+    strategy: 'jwt',
     maxAge: 1 * 24 * 60 * 60, // 1day
   },
   jwt: {
